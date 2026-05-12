@@ -922,3 +922,17 @@ function handleGalleryImport(event) {
             processImportedImage(imageData);
         };
         reader.
+function handleGalleryImport(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const imageData = e.target.result;
+            
+            // Me imageData eka oyaage preview window ekata danna
+            // Example: document.getElementById('previewImg').src = imageData;
+            
+            // Meeka oyaage scanPrescription wage function ekakata pass karanna
+            processImportedImage(imageData);
+        };
+        reader.
